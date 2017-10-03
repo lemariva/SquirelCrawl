@@ -1,0 +1,1 @@
+mincss2======Clears the junk out of your CSS by finding out which selectors areactually not used in your HTML.Example-------```    $ mincss https://github.com```Modification--------------It reads files from the disk, if the URL does not contain http(s)://Fork from[here](https://github.com/peterbe/mincss).
