@@ -54,11 +54,18 @@ def img_base64(filename, contain):
     ext = filename.split(".")[-1]
     encoded_string = u"data:image/" + ext + ";base64," + base64.b64encode(contain)      
     
-    txt = filename.split(".")[-2].split("/")[-1]
-    with open(project_path + "/base64/" + txt + ".txt", "wb") as f:
-        f.write(encoded_string.encode('utf-8'))
-        f.close()
+    
+    if base64export:
+        txt = filename.split(".")[-2].split("/")[-1]
         
+        #with open(project_path + "/base64/" + txt + "." + ext, "wb") as f:
+            #shutil.copyfileobj(contain, f)
+            #f.close()
+            
+        with open(project_path + "/base64/" + txt + ".txt", "wb") as f:
+            f.write(encoded_string.encode('utf-8'))
+            f.close()
+            
     #log_images_base64.append([filename, "\n\n", encoded_string, "\n\n"])
     return encoded_string
 
@@ -471,7 +478,7 @@ p = Processor(phantomjs=False)
 
 try:
 
-    parser = argparse.ArgumentParser(description='Compress a webpage into an html file. Images are converted to base64 and integrated together with CSS files in the html file. Disclaimer:  The author of the code assumes no responsibility for users\' decision-making and their code usage. ')
+    parser = argparse.ArgumentParser(description='Compress a webpage into an html file. Images are converted to base64 and integrated together with CSS files in the html file. Disclaimer: The author of the code assumes no responsibility for users\' decision-making and their code usage. ')
     parser.add_argument('--url', metavar='url', type=str, help='webpage url including http(s)://', required=True)
     parser.add_argument('--path', metavar='path', type=str, help='project name / folder where the downloaded files are saved', required=True)
     parser.add_argument('--iq', metavar = 'imgq', type=int, default=5, help='compress quality images (default=5)') 

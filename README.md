@@ -1,6 +1,6 @@
 # SquirelCrawl
 
-This code compress a webpage into an html file. Images are converted to base64 and integrated together with CSS files in the html. Useful for websites on microcontrollers (or low memory devices), a complete offline copy of a webpage etc.
+This code compress a webpage into an html file. Images are converted to base64 and integrated together with CSS files in the html. Useful for webpages on microcontrollers (or low memory devices), a complete offline copy of a webpage etc.
 
 Requirements
 -------------------
@@ -24,7 +24,7 @@ A tutorial for installing `pip` on Windows can be found [here](https://github.co
 Use
 --------------------
 ```
-squirelcrawl --url <http(s)://...> --path <folder>
+python squirelcrawl --url <http(s)://...> --path <folder>
 ```
 Optional arguments are the following:
 * `-iq (def.: 5)`: the images are compress before converted to base64, the option defines the image quality for the compression. Pillow library is used for the compression;
