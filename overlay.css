@@ -1,0 +1,38 @@
+/*
+ * Created by Martin Giger
+ * This Source Code Form is subject to the terms of the Mozilla Public License,
+ * v. 2.0. If a copy of the MPL was not distributed with this file, You can
+ * obtain one at http://mozilla.org/MPL/2.0/.
+ */
+
+[hidden] {
+    display: none;
+    visibility: hidden;
+}
+
+.so-backdrop {
+    width: 100%;
+    position: absolute;
+	z-index:105;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.so-backdrop dialog,
+.so-backdrop [role='dialog'] {
+    position: relative;
+    display: block;
+}
+
+.overlay {
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 100;
+}
+dialog {
+	margin: 1em auto;
+	background: white;
+	max-width: 500px;
+	padding: .5em;
+}
